@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Modern SaaS landing page with responsive design, smooth animations, pricing, FAQ, and contact form."
+    />
+    <title>NovaFlow — Modern Landing Page</title>
+
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              fontFamily: {
+                sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              },
+              keyframes: {
+                float: {
+                  '0%, 100%': { transform: 'translateY(0px)' },
+                  '50%': { transform: 'translateY(-12px)' },
+                },
+                glow: {
+                  '0%, 100%': { opacity: 0.5 },
+                  '50%': { opacity: 1 },
+                },
+                pulseSoft: {
+                  '0%, 100%': { transform: 'scale(1)' },
+                  '50%': { transform: 'scale(1.03)' },
+                },
+                fadeUp: {
+                  '0%': { opacity: 0, transform: 'translateY(24px)' },
+                  '100%': { opacity: 1, transform: 'translateY(0)' },
+                },
+              },
+              animation: {
+                float: 'float 6s ease-in-out infinite',
+                glow: 'glow 4s ease-in-out infinite',
+                pulseSoft: 'pulseSoft 3s ease-in-out infinite',
+                fadeUp: 'fadeUp 0.8s ease-out both',
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-300 selection:text-slate-950"
+  >
+    <!-- Navbar -->
+    <header
+      id="site-header"
+      class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/75 glass transition-shadow duration-300"
+    >
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="h-20 flex items-center justify-between">
+          <a href="#home" class="flex items-center space-x-3 group">
+            <div
+              class="h-11 w-11 rounded-2xl bg-gradient-to-br from-cyan-400 to-indigo-500 flex items-center justify-center font-black text-slate-950 shadow-lg group-hover:scale-105 transition-transform"
+            >
+              H
+            </div>
+            <div class="leading-tight">
+              <p class="text-lg font-extrabold tracking-tight">HarshDev</p>
+              <p class="text-xs text-slate-400">Scale faster</p>
+            </div>
+          </a>
+
+          <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+            <a href="#features" class="hover:text-white transition">Features</a>
+            <a href="#about" class="hover:text-white transition">About</a>
+            <a href="#testimonials" class="hover:text-white transition">Testimonials</a>
+            <a href="#pricing" class="hover:text-white transition">Pricing</a>
+            <a href="#faq" class="hover:text-white transition">FAQ</a>
+            <a href="#contact" class="hover:text-white transition">Contact</a>
+          </div>
+
+          <div class="hidden md:block">
+            <a
+              href="#contact"
+              class="inline-flex items-center px-5 py-2.5 rounded-xl bg-white text-slate-900 font-semibold hover:bg-slate-200 transition shadow-lg hover:shadow-xl"
+            >
+              Get Started
+            </a>
+          </div>
+
+          <button
+            id="menu-toggle"
+            aria-label="Open menu"
+            class="md:hidden inline-flex items-center justify-center h-11 w-11 rounded-xl border border-white/10 bg-white/5 text-white hover:bg-white/10 transition focus-ring"
+          >
+            <i class="fa-solid fa-bars text-lg"></i>
+          </button>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden pb-4">
+          <div
+            class="grid gap-2 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm glass shadow-soft"
+          >
+            <a href="#features" class="px-4 py-3 rounded-xl hover:bg-white/10 transition"
+              >Features</a
+            >
+            <a href="#about" class="px-4 py-3 rounded-xl hover:bg-white/10 transition">About</a>
+            <a href="#testimonials" class="px-4 py-3 rounded-xl hover:bg-white/10 transition"
+              >Testimonials</a
+            >
+            <a href="#pricing" class="px-4 py-3 rounded-xl hover:bg-white/10 transition">Pricing</a>
+            <a href="#faq" class="px-4 py-3 rounded-xl hover:bg-white/10 transition">FAQ</a>
+            <a href="#contact" class="px-4 py-3 rounded-xl hover:bg-white/10 transition">Contact</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="home">
+      <!-- Hero Section -->
+      <section class="relative overflow-hidden hero-grid">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-indigo-700/80 via-slate-950 to-cyan-700/70"
+        ></div>
+        <div
+          class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl animate-pulseSoft"
+        ></div>
+        <div
+          class="absolute top-24 right-0 h-80 w-80 rounded-full bg-purple-500/20 blur-3xl animate-float"
+        ></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+          <div class="grid lg:grid-cols-2 gap-14 items-center">
+            <div class="reveal">
+              <span
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/10 text-sm text-slate-100 mb-6 shadow-soft"
+              >
+                <i class="fa-solid fa-bolt text-cyan-300"></i>
+                Built for startups, products, and SaaS brands
+              </span>
+
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+                I build high-converting landing pages that
+                <span class="text-cyan-300">turn visitors</span> into customers.
+              </h1>
+
+              <p class="mt-6 text-lg sm:text-xl text-slate-200 max-w-xl leading-8">
+                Helping startups and small businesses grow with fast, modern, and conversion-focused
+                websites.
+              </p>
+
+              <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                <a
+                  href="#contact"
+                  class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-xl bg-white text-slate-900 font-semibold hover:bg-slate-200 transition shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                >
+                  <i class="fa-solid fa-rocket"></i>
+                  Start Free Trial
+                </a>
+                <a
+                  href="#features"
+                  class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-xl border border-white/20 bg-white/5 font-semibold hover:bg-white/10 transition hover:-translate-y-0.5"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                  Explore Features
+                </a>
+              </div>
+
+              <div class="mt-10 grid grid-cols-3 gap-4 max-w-xl">
+                <div
+                  class="rounded-2xl bg-white/10 border border-white/10 p-4 text-center hover-lift hover:border-cyan-300/30"
+                >
+                  <p class="text-2xl font-bold">98%</p>
+                  <p class="text-xs text-slate-300 mt-1">Client satisfaction</p>
+                </div>
+                <div
+                  class="rounded-2xl bg-white/10 border border-white/10 p-4 text-center hover-lift hover:border-cyan-300/30"
+                >
+                  <p class="text-2xl font-bold">24h</p>
+                  <p class="text-xs text-slate-300 mt-1">Fast setup</p>
+                </div>
+                <div
+                  class="rounded-2xl bg-white/10 border border-white/10 p-4 text-center hover-lift hover:border-cyan-300/30"
+                >
+                  <p class="text-2xl font-bold">3x</p>
+                  <p class="text-xs text-slate-300 mt-1">Better conversions</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal">
+              <div class="relative">
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-cyan-400/30 to-purple-500/30 blur-3xl rounded-full animate-glow"
+                ></div>
+                <div
+                  class="relative rounded-3xl border border-white/10 bg-slate-900/60 shadow-soft p-5 sm:p-6 glass"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
+                    alt="Product dashboard preview"
+                    class="w-full h-72 sm:h-96 object-cover rounded-2xl border border-white/10"
+                  />
+                  <div class="mt-5 grid sm:grid-cols-2 gap-4">
+                    <div class="rounded-2xl bg-white/5 border border-white/10 p-4 hover-lift">
+                      <div class="flex items-center gap-2 text-slate-400 text-sm">
+                        <i class="fa-solid fa-users text-cyan-300"></i>
+                        Active users
+                      </div>
+                      <p class="text-2xl font-bold mt-2">12.4K</p>
+                    </div>
+                    <div class="rounded-2xl bg-white/5 border border-white/10 p-4 hover-lift">
+                      <div class="flex items-center gap-2 text-slate-400 text-sm">
+                        <i class="fa-solid fa-chart-line text-purple-300"></i>
+                        Monthly growth
+                      </div>
+                      <p class="text-2xl font-bold mt-2 text-cyan-300">+38%</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust / Social Proof -->
+      <section class="py-10 border-y border-white/10 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p class="text-center text-sm uppercase tracking-[0.25em] text-slate-400 mb-6">
+            Trusted by growing teams
+          </p>
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center text-slate-300"
+          >
+            <div
+              class="rounded-xl border border-white/10 py-4 bg-white/5 hover-lift hover:border-cyan-300/30"
+            >
+              Flowify
+            </div>
+            <div
+              class="rounded-xl border border-white/10 py-4 bg-white/5 hover-lift hover:border-cyan-300/30"
+            >
+              Orbit
+            </div>
+            <div
+              class="rounded-xl border border-white/10 py-4 bg-white/5 hover-lift hover:border-cyan-300/30"
+            >
+              Vertex
+            </div>
+            <div
+              class="rounded-xl border border-white/10 py-4 bg-white/5 hover-lift hover:border-cyan-300/30"
+            >
+              Pulse
+            </div>
+            <div
+              class="rounded-xl border border-white/10 py-4 bg-white/5 hover-lift hover:border-cyan-300/30"
+            >
+              Nova
+            </div>
+            <div
+              class="rounded-xl border border-white/10 py-4 bg-white/5 hover-lift hover:border-cyan-300/30"
+            >
+              Atlas
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-2xl mx-auto reveal section-line pb-6">
+            <h2 class="text-3xl sm:text-4xl font-black tracking-tight">
+              Features built for conversion
+            </h2>
+            <p class="mt-4 text-slate-400 leading-7">
+              Everything you need for a polished startup or product landing page.
+            </p>
+          </div>
+
+          <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div
+              class="reveal rounded-3xl bg-white/5 border border-white/10 p-7 hover-lift hover:shadow-2xl hover:border-cyan-300/30"
+            >
+              <div
+                class="h-12 w-12 rounded-2xl bg-cyan-400/15 flex items-center justify-center text-cyan-300 mb-5 border border-cyan-300/15"
+              >
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <h3 class="text-xl font-semibold">High-converting hero</h3>
+              <p class="mt-3 text-slate-400 leading-7">
+                Clear value proposition, CTA buttons, and trust signals to drive action.
+              </p>
+            </div>
+
+            <div
+              class="reveal rounded-3xl bg-white/5 border border-white/10 p-7 hover-lift hover:shadow-2xl hover:border-purple-300/30"
+            >
+              <div
+                class="h-12 w-12 rounded-2xl bg-purple-400/15 flex items-center justify-center text-purple-300 mb-5 border border-purple-300/15"
+              >
+                <i class="fa-solid fa-mobile-screen-button"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Responsive layouts</h3>
+              <p class="mt-3 text-slate-400 leading-7">
+                Mobile-first sections that look great on phones, tablets, and desktops.
+              </p>
+            </div>
+
+            <div
+              class="reveal rounded-3xl bg-white/5 border border-white/10 p-7 hover-lift hover:shadow-2xl hover:border-indigo-300/30"
+            >
+              <div
+                class="h-12 w-12 rounded-2xl bg-indigo-400/15 flex items-center justify-center text-indigo-300 mb-5 border border-indigo-300/15"
+              >
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Smooth interactions</h3>
+              <p class="mt-3 text-slate-400 leading-7">
+                Animations, hover effects, and collapsible FAQ sections for a polished feel.
+              </p>
+            </div>
+
+            <div
+              class="reveal rounded-3xl bg-white/5 border border-white/10 p-7 hover-lift hover:shadow-2xl hover:border-cyan-300/30"
+            >
+              <div
+                class="h-12 w-12 rounded-2xl bg-cyan-400/15 flex items-center justify-center text-cyan-300 mb-5 border border-cyan-300/15"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <h3 class="text-xl font-semibold">SEO-friendly structure</h3>
+              <p class="mt-3 text-slate-400 leading-7">
+                Semantic HTML5 structure designed for better discoverability and readability.
+              </p>
+            </div>
+
+            <div
+              class="reveal rounded-3xl bg-white/5 border border-white/10 p-7 hover-lift hover:shadow-2xl hover:border-purple-300/30"
+            >
+              <div
+                class="h-12 w-12 rounded-2xl bg-purple-400/15 flex items-center justify-center text-purple-300 mb-5 border border-purple-300/15"
+              >
+                <i class="fa-solid fa-gauge-high"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Fast performance</h3>
+              <p class="mt-3 text-slate-400 leading-7">
+                Lightweight code, CDN-based Tailwind CSS, and optimized visual hierarchy.
+              </p>
+            </div>
+
+            <div
+              class="reveal rounded-3xl bg-white/5 border border-white/10 p-7 hover-lift hover:shadow-2xl hover:border-indigo-300/30"
+            >
+              <div
+                class="h-12 w-12 rounded-2xl bg-indigo-400/15 flex items-center justify-center text-indigo-300 mb-5 border border-indigo-300/15"
+              >
+                <i class="fa-solid fa-sliders"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Easy to customize</h3>
+              <p class="mt-3 text-slate-400 leading-7">
+                Simple structure, reusable sections, and clean design tokens for quick edits.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-24 bg-slate-900/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+              <video
+                src="./videos/vid3.mp4"
+                alt="Team working together"
+                class="rounded-3xl shadow-2xl border border-white/10 w-full h-[420px] object-cover hover-lift"
+                loop
+                muted
+                playsinline
+                controls
+                autoplay
+              ></video>
+            </div>
+
+            <div class="reveal">
+              <p class="text-cyan-300 font-semibold uppercase tracking-[0.25em] text-sm">
+                About the product
+              </p>
+              <h2 class="mt-4 text-3xl sm:text-4xl font-black leading-tight tracking-tight">
+                Designed to help startups launch faster and convert better.
+              </h2>
+              <p class="mt-6 text-slate-400 leading-8">
+                NovaFlow gives you a modern landing page foundation with a premium SaaS look. It is
+                built for clarity, trust, and action — so visitors understand your offer quickly.
+              </p>
+
+              <div class="mt-8 space-y-4">
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="mt-1 h-8 w-8 rounded-lg bg-cyan-400/15 text-cyan-300 flex items-center justify-center border border-cyan-300/15"
+                  >
+                    <i class="fa-solid fa-check"></i>
+                  </div>
+                  <p class="text-slate-300 leading-7">
+                    Clean layout that supports product storytelling.
+                  </p>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="mt-1 h-8 w-8 rounded-lg bg-cyan-400/15 text-cyan-300 flex items-center justify-center border border-cyan-300/15"
+                  >
+                    <i class="fa-solid fa-check"></i>
+                  </div>
+                  <p class="text-slate-300 leading-7">
+                    Conversion-focused sections with strong CTA placement.
+                  </p>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="mt-1 h-8 w-8 rounded-lg bg-cyan-400/15 text-cyan-300 flex items-center justify-center border border-cyan-300/15"
+                  >
+                    <i class="fa-solid fa-check"></i>
+                  </div>
+                  <p class="text-slate-300 leading-7">
+                    Flexible and easy to adapt for any business niche.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-2xl mx-auto reveal section-line pb-6">
+            <h2 class="text-3xl sm:text-4xl font-black tracking-tight">What customers say</h2>
+            <p class="mt-4 text-slate-400 leading-7">
+              Social proof that builds trust and improves conversions.
+            </p>
+          </div>
+
+          <div class="mt-14 grid gap-6 lg:grid-cols-3">
+            <article
+              class="reveal rounded-3xl bg-white/5 border border-white/10 p-7 hover-lift hover:border-cyan-300/30"
+            >
+              <div class="flex items-center space-x-4">
+                <img
+                  src="https://i.pravatar.cc/100?img=12"
+                  alt="Customer photo"
+                  class="h-14 w-14 rounded-full object-cover border border-white/10"
+                />
+                <div>
+                  <h3 class="font-semibold text-lg">Ava Mitchell</h3>
+                  <p class="text-sm text-slate-400">Founder, BrightLoop</p>
+                </div>
+              </div>
+              <p class="mt-5 text-slate-300 leading-7">
+                “The page looks premium, loads fast, and helped us present our product clearly.”
+              </p>
+              <div class="mt-5 text-cyan-300">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </article>
+
+            <article
+              class="reveal rounded-3xl bg-white/5 border border-white/10 p-7 hover-lift hover:border-purple-300/30"
+            >
+              <div class="flex items-center space-x-4">
+                <img
+                  src="https://i.pravatar.cc/100?img=32"
+                  alt="Customer photo"
+                  class="h-14 w-14 rounded-full object-cover border border-white/10"
+                />
+                <div>
+                  <h3 class="font-semibold text-lg">Noah Carter</h3>
+                  <p class="text-sm text-slate-400">Product Lead, Pulse</p>
+                </div>
+              </div>
+              <p class="mt-5 text-slate-300 leading-7">
+                “Mobile responsiveness and clean sections made the experience feel polished from day
+                one.”
+              </p>
+              <div class="mt-5 text-cyan-300">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </article>
+
+            <article
+              class="reveal rounded-3xl bg-white/5 border border-white/10 p-7 hover-lift hover:border-indigo-300/30"
+            >
+              <div class="flex items-center space-x-4">
+                <img
+                  src="https://i.pravatar.cc/100?img=47"
+                  alt="Customer photo"
+                  class="h-14 w-14 rounded-full object-cover border border-white/10"
+                />
+                <div>
+                  <h3 class="font-semibold text-lg">Sophia Reed</h3>
+                  <p class="text-sm text-slate-400">Marketing, Nova</p>
+                </div>
+              </div>
+              <p class="mt-5 text-slate-300 leading-7">
+                “The FAQs, pricing, and contact form create a complete conversion flow for
+                visitors.”
+              </p>
+              <div class="mt-5 text-cyan-300">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section id="pricing" class="py-24 bg-slate-900/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-2xl mx-auto reveal section-line pb-6">
+            <h2 class="text-3xl sm:text-4xl font-black tracking-tight">Simple pricing</h2>
+            <p class="mt-4 text-slate-400 leading-7">
+              Choose the plan that matches your product stage.
+            </p>
+          </div>
+
+          <div class="mt-14 grid gap-6 lg:grid-cols-3 items-stretch">
+            <div
+              class="reveal rounded-3xl bg-white/5 border border-white/10 p-8 flex flex-col hover-lift hover:border-cyan-300/30"
+            >
+              <h3 class="text-xl font-semibold">Starter</h3>
+              <p class="mt-2 text-slate-400">For new launches</p>
+              <div class="mt-6 text-4xl font-black">
+                $19<span class="text-base font-medium text-slate-400">/mo</span>
+              </div>
+              <ul class="mt-6 space-y-3 text-slate-300">
+                <li><i class="fa-solid fa-check text-cyan-300 mr-2"></i>1 landing page</li>
+                <li><i class="fa-solid fa-check text-cyan-300 mr-2"></i>Basic animations</li>
+                <li><i class="fa-solid fa-check text-cyan-300 mr-2"></i>Contact form</li>
+              </ul>
+              <a
+                href="#contact"
+                class="mt-8 inline-flex justify-center px-5 py-3 rounded-xl bg-white/10 hover:bg-white/15 transition font-semibold focus-ring"
+              >
+                Choose Starter
+              </a>
+            </div>
+
+            <div
+              class="reveal rounded-3xl bg-gradient-to-b from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 p-8 flex flex-col shadow-soft relative overflow-hidden hover-lift"
+            >
+              <span
+                class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-cyan-300 text-slate-950"
+              >
+                Most Popular
+              </span>
+              <h3 class="text-xl font-semibold">Growth</h3>
+              <p class="mt-2 text-slate-400">Best for startups</p>
+              <div class="mt-6 text-4xl font-black">
+                $39<span class="text-base font-medium text-slate-400">/mo</span>
+              </div>
+              <ul class="mt-6 space-y-3 text-slate-200">
+                <li><i class="fa-solid fa-check text-cyan-300 mr-2"></i>Everything in Starter</li>
+                <li><i class="fa-solid fa-check text-cyan-300 mr-2"></i>Pricing + FAQ sections</li>
+                <li><i class="fa-solid fa-check text-cyan-300 mr-2"></i>Priority support</li>
+              </ul>
+              <a
+                href="#contact"
+                class="mt-8 inline-flex justify-center px-5 py-3 rounded-xl bg-cyan-300 text-slate-950 hover:bg-cyan-200 transition font-semibold focus-ring"
+              >
+                Choose Growth
+              </a>
+            </div>
+
+            <div
+              class="reveal rounded-3xl bg-white/5 border border-white/10 p-8 flex flex-col hover-lift hover:border-purple-300/30"
+            >
+              <h3 class="text-xl font-semibold">Scale</h3>
+              <p class="mt-2 text-slate-400">For growing teams</p>
+              <div class="mt-6 text-4xl font-black">
+                $79<span class="text-base font-medium text-slate-400">/mo</span>
+              </div>
+              <ul class="mt-6 space-y-3 text-slate-300">
+                <li><i class="fa-solid fa-check text-cyan-300 mr-2"></i>Advanced customization</li>
+                <li><i class="fa-solid fa-check text-cyan-300 mr-2"></i>Deployment help</li>
+                <li><i class="fa-solid fa-check text-cyan-300 mr-2"></i>Conversion optimization</li>
+              </ul>
+              <a
+                href="#contact"
+                class="mt-8 inline-flex justify-center px-5 py-3 rounded-xl bg-white/10 hover:bg-white/15 transition font-semibold focus-ring"
+              >
+                Choose Scale
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="py-24 bg-slate-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center reveal section-line pb-6">
+            <h2 class="text-3xl sm:text-4xl font-black tracking-tight">
+              Frequently asked questions
+            </h2>
+            <p class="mt-4 text-slate-400 leading-7">Quick answers to common questions.</p>
+          </div>
+
+          <div class="mt-12 space-y-4">
+            <div
+              class="reveal rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:border-cyan-300/25 transition"
+            >
+              <button
+                class="faq-question w-full px-6 py-5 flex items-center justify-between text-left font-semibold hover:bg-white/5 transition focus-ring"
+              >
+                <span>Is this landing page mobile responsive?</span>
+                <span class="faq-icon text-cyan-300">+</span>
+              </button>
+              <div class="faq-answer hidden px-6 pb-5 text-slate-400 leading-7">
+                Yes. It is built mobile-first with responsive layouts for phones, tablets, and
+                desktops.
+              </div>
+            </div>
+
+            <div
+              class="reveal rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:border-purple-300/25 transition"
+            >
+              <button
+                class="faq-question w-full px-6 py-5 flex items-center justify-between text-left font-semibold hover:bg-white/5 transition focus-ring"
+              >
+                <span>Can I customize the colors and content?</span>
+                <span class="faq-icon text-cyan-300">+</span>
+              </button>
+              <div class="faq-answer hidden px-6 pb-5 text-slate-400 leading-7">
+                Yes. You can easily update text, images, sections, and colors to match your brand.
+              </div>
+            </div>
+
+            <div
+              class="reveal rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:border-indigo-300/25 transition"
+            >
+              <button
+                class="faq-question w-full px-6 py-5 flex items-center justify-between text-left font-semibold hover:bg-white/5 transition focus-ring"
+              >
+                <span>Does the FAQ section work with JavaScript?</span>
+                <span class="faq-icon text-cyan-300">+</span>
+              </button>
+              <div class="faq-answer hidden px-6 pb-5 text-slate-400 leading-7">
+                Yes. The accordion behavior is handled with simple Vanilla JavaScript.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-24 bg-slate-900/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-start">
+            <div class="reveal">
+              <p class="text-cyan-300 font-semibold uppercase tracking-[0.25em] text-sm">Contact</p>
+              <h2 class="mt-4 text-3xl sm:text-4xl font-black tracking-tight">
+                Ready to launch your next product?
+              </h2>
+              <p class="mt-5 text-slate-400 max-w-xl leading-8">
+                Send a message to discuss your landing page goals, branding, and required sections.
+              </p>
+
+              <div class="mt-8 space-y-4 text-slate-300">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-envelope text-cyan-300"></i>
+                  harshjangra021@gmail.com
+                </div>
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-globe text-cyan-300"></i>
+                  Available for startups worldwide
+                </div>
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-shield-halved text-cyan-300"></i>
+                  Fast delivery and clean code
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="reveal rounded-3xl border border-white/10 bg-slate-950/60 p-6 sm:p-8 shadow-soft gradient-border"
+            >
+              <form class="space-y-5">
+                <div>
+                  <label class="block text-sm font-medium mb-2" for="name">Name</label>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="Your name"
+                    class="w-full rounded-xl bg-slate-900 border border-white/10 px-4 py-3 text-slate-100 placeholder-slate-500 focus-ring hover:border-cyan-300/30 focus:border-cyan-300/60 transition"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2" for="email">Email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    class="w-full rounded-xl bg-slate-900 border border-white/10 px-4 py-3 text-slate-100 placeholder-slate-500 focus-ring hover:border-cyan-300/30 focus:border-cyan-300/60 transition"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2" for="message">Message</label>
+                  <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Tell us about your project"
+                    class="w-full rounded-xl bg-slate-900 border border-white/10 px-4 py-3 text-slate-100 placeholder-slate-500 focus-ring hover:border-cyan-300/30 focus:border-cyan-300/60 transition resize-none"
+                    required
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full inline-flex justify-center items-center gap-2 px-6 py-3 rounded-xl bg-cyan-300 text-slate-950 font-semibold hover:bg-cyan-200 transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus-ring"
+                >
+                  <i class="fa-solid fa-paper-plane"></i>
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Back to top -->
+    <button
+      id="back-to-top"
+      aria-label="Back to top"
+      class="fixed bottom-6 right-6 z-50 hidden h-12 w-12 rounded-full bg-cyan-300 text-slate-950 shadow-lg hover:bg-cyan-200 transition hover:-translate-y-1 focus-ring"
+    >
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-slate-950">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4"
+      >
+        <p class="text-sm text-slate-400">© 2026 NovaFlow. All rights reserved.</p>
+
+        <div class="flex items-center gap-4 text-sm text-slate-400">
+          <a
+            href="#"
+            class="h-10 w-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center hover:text-white hover:bg-white/10 hover:border-cyan-300/30 transition"
+          >
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a
+            href="#"
+            class="h-10 w-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center hover:text-white hover:bg-white/10 hover:border-cyan-300/30 transition"
+          >
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a
+            href="#"
+            class="h-10 w-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center hover:text-white hover:bg-white/10 hover:border-cyan-300/30 transition"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>

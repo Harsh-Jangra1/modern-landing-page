@@ -1,0 +1,22 @@
+{
+  "name": "landing-page-app",
+  "version": "1.0.0",
+  "description": "A modern, fully responsive landing page for a startup or product website.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build step not defined'"
+  },
+  "keywords": [
+    "landing",
+    "page",
+    "responsive",
+    "startup",
+    "website"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "tailwindcss": "^2.2.19"
+  }
+}
