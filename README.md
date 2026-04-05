@@ -44,6 +44,10 @@ modern-landing-page
 │   │   └── main.css
 │   ├── scripts
 │   │   └── main.js
+│   ├── videos
+│   │   ├── vid1.mp4
+│   │   ├── vid2.mp4
+│   │   └── vid3.mp4
 │   └── assets
 ├── package.json
 └── README.md
